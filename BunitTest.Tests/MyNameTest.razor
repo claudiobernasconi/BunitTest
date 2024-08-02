@@ -1,0 +1,14 @@
+﻿@attribute [TestClass]
+@inherits BunitTestContext
+@code
+{
+  [TestMethod]
+  public void MyNameComponentRendersCorrectly()
+  {
+    // Act
+    var cut = Render(@<MyName />);
+
+    // Assert
+    cut.MarkupMatches(@<h1>Claudio Bernasconi</h1>);
+  }
+}
