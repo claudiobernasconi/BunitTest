@@ -1,0 +1,17 @@
+﻿@attribute [TestClass]
+@inherits BunitTestContext
+@code
+{
+  [TestMethod]
+  public void RandomNumberGenerator_RendersANumberOnClick()
+  {
+    // Arrange
+    IRenderedComponent<RandomNumberGenerator> cut = Render<RandomNumberGenerator>(@<RandomNumberGenerator />);
+
+    // Act
+    cut.Find("button").Click();
+
+    // Assert
+    Assert.IsTrue(cut.Instance.Number >= 1 && cut.Instance.Number <= 99);
+  }
+}

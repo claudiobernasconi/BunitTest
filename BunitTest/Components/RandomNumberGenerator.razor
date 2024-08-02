@@ -1,0 +1,12 @@
+﻿<p>@Number</p>
+<button @onclick="GenerateNumber">Generate</button>
+
+@code {
+    public int Number { get; set; }
+    private Random _random = new Random();
+
+    public void GenerateNumber()
+    {
+        Number = _random.Next(1, 99);
+    }
+}
